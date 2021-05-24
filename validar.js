@@ -1,3 +1,4 @@
+
 function checkRut(rut) {
     var valor = rut.value.replace('.','');
     valor = valor.replace('-','');
@@ -24,3 +25,56 @@ function checkRut(rut) {
     
     rut.setCustomValidity('');
 }
+
+$(document).ready(function() {
+    $("#formulario").validate({
+      rules: {
+        nombre : {
+          required: true,
+          minlength: 3
+        },
+        correo: {
+          required: true,
+          email: true
+        },
+        ciudad: {
+          required: true,
+          minlength: 3
+        },
+        documento: {
+            required: true,
+            minlength: 9,
+            maxlength: 10
+        },
+        comentario: {
+            required: true,
+            minlength: 15
+          },
+      },
+
+      messages : {
+        nombre: {
+          minlength: "Ingrese al menos 3 caracteres",
+          required: "Ingrese un nombre"
+        },
+        correo: {
+            required: "Ingrese un correo valido"
+          },
+        ciudad: {
+            minlength: "Ingrese al menos 3 caracteres",
+            required: "Ingrese una ciudad"
+        },
+        documento: {
+            required: "Ingrese un rut",
+            minlength: "RUT Incompleto",
+            maxlength: "RUT Incorrecto"
+        },
+        comentario: {
+            minlength: "Ingrese al menos 15 caracteres",
+            required: "Ingrese un comentario"
+        }
+      }
+      
+
+    });
+  });

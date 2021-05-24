@@ -1,65 +1,77 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8"> 
-        <title>One - Ayuda a nuestros animales peludos</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <script type='text/javascript' src="Untitled-1.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    </head>
-
+<html lang="es">
 <body>
-    <header>
-        <div>
-            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #cccdce00;">
-                <a class="navbar-brand" href="#"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="Nosotros.html">Nosotros</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="Todos.html">Adopta</a>
+    <meta charset="utf/8">
+    <title>ONG ayuda a un peludo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type='text/javascript' src="Untitled-1.js"></script>
+</body>
+<head>
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #a0a9af;">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">ONG</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Inicio</a>
                       </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Contactos.html">Contactos</a>
-                    </li>
-                  </ul>
-                <form class="container-fluid justify-content-start">
-                    <button id="geo" class="btn btn-outline-success me-2" type="button" onclick="getLocation()">Clima</button>
-                </form>
+                      <li class="nav-item">
+                        <a class="nav-link" href="Nosotros.html">Nosotros</a>
+                      </li>
+                      <li class="nav-item active">
+                          <a class="nav-link" href="Todos.html">Adopta</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="Contactos.html">Contactos</a>
+                      </li>
+                          <button id="geo" class="btn btn-outline-success me-2" type="button" onclick="getLocation()">Clima</button>
+                    </ul>
+                  </div>
                 </div>
-            </nav>
-        </div>
-    </header>
+              </nav>
+        </header>
+        
+         
+    </div>
+    <br>
 
     <div class="container">
-        <div style="margin-top: 40px;">
-            <h2> Info del Perro</h2>
-            <div class="row">
-                <div class="col-4">
-                    <img width="250" height="250" src="https://pm1.narvii.com/6340/c64419f51af94f43eaa457c0c4f9f849c709c8bb_128.jpg">            
-                </div>
-                <div class="col-4">
-                    <p>Nombre: Cachulo</p> 
-                    <p>Edad: 4 años</p> 
-                    <p>Genero: Macho</p> 
-                    <p>Esterilizado: Si</p> 
-                    <p>Nom.Chip: 99801240765088</p></div>
-            </div>
-        </div>
+      <div style="margin-top: 40px;">
+          <h2> Info del Perro</h2>
+          <div class="row">
+              <div class="col-4">
+                  <img width="250" height="250" src="https://pm1.narvii.com/6340/c64419f51af94f43eaa457c0c4f9f849c709c8bb_128.jpg">            
+              </div>
+              <div class="col-4">
+                  <p>Nombre: Cachulo</p> 
+                  <p>Edad: 4 años</p> 
+                  <p>Genero: Macho</p> 
+                  <p>Esterilizado: Si</p> 
+                  <p>Nom.Chip: 99801240765088</p></div>
+          </div>
+      </div>
 
-    </div>
+  </div>
+    
 
 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
-</body>
-</html>   
+
+    <footer class="text-muted py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Volver arriba</a>
+    </p>
+    <p class="mb-1">ONG ayuda a un peludo 2021</p>
+  </div>
+</footer>
+</head>
+
+</html> 

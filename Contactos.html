@@ -1,63 +1,63 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="es">
+<body>
     <meta charset="utf/8">
-    <title>One - Ayuda a nuestros animales peludos</title>
-   
+    <title>ONG ayuda a un peludo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <script type='text/javascript' src="Untitled-1.js"></script>
     <script type='text/javascript' src="validar.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-      img{
-        width: 250px;
-        height:250px;
-      }
+        img{
+          width: auto;
+          height: auto;
+          }
     </style>
-</head>
+</body>
+<head>
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #a0a9af;">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">ONG</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="Nosotros.html">Nosotros</a>
+                      </li>
+                      <li class="nav-item active">
+                          <a class="nav-link" href="Todos.html">Adopta</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="Contactos.html">Contactos</a>
+                      </li>
+                          <button id="geo" class="btn btn-outline-success me-2" type="button" onclick="getLocation()">Clima</button>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </header>
+    </div>
 
-<body>
-    <header>
-      <div>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff00;">
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="Nosotros.html">Nosotros</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="Todos.html">Adopta</a>
-                  </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Contactos.html">Contactos</a>
-                </li>
-              </ul>
-              <form class="container-fluid justify-content-start">
-                <button id="geo" class="btn btn-outline-success me-2"  type="button" onclick="getLocation()">Clima</button>
-              </form>
-            </div>
-          </nav>
-          </div>
-    </header>
-    
     <div class="container">
       <br>
-      <form> <!--action="http://www.colex.cl/duoc/cargaData.php" method="POST"-->
+      <form id="formulario"> <!--action="http://www.colex.cl/duoc/cargaData.php" method="POST"-->
         <div class="form-row">
           <div class="col-md-5">
-            <label>Nombre Completo: </label>
-            <input type="text" name="nombre" class="form-control" placeholder="ej: (Tomas Angres Osorio Venegas)" id="nombre">
+            <label>Nombre: </label>
+            <input type="text" name="nombre" class="form-control" placeholder="ej: (Tomas Osorio Venegas)" id="nombre" required>
           </div>
           <div class="col-md-4">
             <label>Correo electronico: </label>
-            <input type="email" name="correo" class="form-control" placeholder="ejemplo@correo.com" id="correo">
+            <input type="email" name="correo" class="form-control" placeholder="ejemplo@correo.com" id="correo" required>
           </div>
           <div class="col-md-3">
             <label>Numero de Telefono: </label>
@@ -79,13 +79,13 @@
           </div>
           <div class="col-md-6">
             <label>Cuidad de residencia: </label>
-            <input type="text" name="ciudad" class="form-control" placeholder="Santiago" id="ciudad">
+            <input type="text" name="ciudad" class="form-control" placeholder="Santiago" id="ciudad" required>
           </div>
         </div>
         <br>
         <div>
           <label for="exampleFormControlTextarea1">Agregar su comentario</label>
-          <textarea class="form-control" name="comentario" id="comentario" placeholder="Escriba su comentario Aqui" rows="6"></textarea>
+          <textarea class="form-control" name="comentario" id="comentario" placeholder="Escriba su comentario Aqui" rows="6" required></textarea>
         </div>
         <input type="hidden" id="url" name="url" value="google.cl" /><br />
         <br>
@@ -97,12 +97,16 @@
         <br>
     </form>
     </div>
+
+    <footer class="text-muted py-5">
+    <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Volver arriba</a>
+    </p>
+    <p class="mb-1">ONG ayuda a un peludo 2021</p>
+    </div>
+    </footer>
     
+</head>
 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-
-
-
-</body>
-</html>
+</html> 
