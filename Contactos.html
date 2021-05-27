@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
-<body>
+<head>
     <meta charset="utf/8">
     <title>ONG ayuda a un peludo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <script type='text/javascript' src="Untitled-1.js"></script>
     <script type='text/javascript' src="validar.js"></script>
     <style>
-        img{
-          width: auto;
-          height: auto;
+          .error{
+          color: red;
           }
+          .obli{
+          color: red;
+          };
+          body{
+          background: rgb(238, 238, 238);
+        }
     </style>
-</body>
-<head>
+</head>
+<body>
+  <div class="container" style="background: rgb(207, 207, 207);">
     <div class="container">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #a0a9af;">
@@ -49,14 +54,14 @@
 
     <div class="container">
       <br>
-      <form id="formulario"> <!--action="http://www.colex.cl/duoc/cargaData.php" method="POST"-->
-        <div class="form-row">
+      <form id="formulario" action="http://www.colex.cl/duoc/cargaData.php" method="POST"> <!--action="http://www.colex.cl/duoc/cargaData.php" method="POST"-->
+        <div class="row">
           <div class="col-md-5">
-            <label>Nombre: </label>
+            <label class="obli">*</label><label>Nombre: </label>
             <input type="text" name="nombre" class="form-control" placeholder="ej: (Tomas Osorio Venegas)" id="nombre" required>
           </div>
           <div class="col-md-4">
-            <label>Correo electronico: </label>
+            <label class="obli">*</label><label>Correo electronico: </label>
             <input type="email" name="correo" class="form-control" placeholder="ejemplo@correo.com" id="correo" required>
           </div>
           <div class="col-md-3">
@@ -65,7 +70,7 @@
           </div>
         </div>
         <br>
-        <div class="form-row">
+        <div class="row">
           <div class="col-md-2">
             <label>Identificarse: </label>
             <select name="identificar" class="form-control">
@@ -74,17 +79,17 @@
             </select>
           </div>
           <div class="col-md-4">
-            <label>Rut o Pasaporte: </label>
-            <input type="text" name="documento" class="form-control" placeholder="19.434.111-4" id="rut" required oninput="checkRut(this)">
+            <label class="obli">*</label><label>Rut o Pasaporte: </label>
+            <input type="text" name="documento" class="form-control" placeholder="19.434.111-4" id="rut" required>
           </div>
           <div class="col-md-6">
-            <label>Cuidad de residencia: </label>
+            <label class="obli">*</label><label>Cuidad de residencia: </label>
             <input type="text" name="ciudad" class="form-control" placeholder="Santiago" id="ciudad" required>
           </div>
         </div>
         <br>
         <div>
-          <label for="exampleFormControlTextarea1">Agregar su comentario</label>
+          <label class="obli">*</label><label for="exampleFormControlTextarea1">Agregar su comentario</label>
           <textarea class="form-control" name="comentario" id="comentario" placeholder="Escriba su comentario Aqui" rows="6" required></textarea>
         </div>
         <input type="hidden" id="url" name="url" value="google.cl" /><br />
@@ -106,7 +111,8 @@
     <p class="mb-1">ONG ayuda a un peludo 2021</p>
     </div>
     </footer>
+  </div>
     
-</head>
+  </body>
 
 </html> 

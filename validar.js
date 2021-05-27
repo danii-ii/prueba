@@ -1,30 +1,44 @@
 
-function checkRut(rut) {
-    var valor = rut.value.replace('.','');
-    valor = valor.replace('-','');
-    cuerpo = valor.slice(0,-1);
-    dv = valor.slice(-1).toUpperCase();
-    
-    rut.value = cuerpo + '-'+ dv
-    if(cuerpo.length < 7) { rut.setCustomValidity("RUT Incompleto"); return false;}
-    suma = 0;
-    multiplo = 2;
+function checkRut(campo){
+  if ( campo.length == 0 ){ return false; }
 
-    for(i=1;i<=cuerpo.length;i++) {
-        index = multiplo * valor.charAt(cuerpo.length - i);
-        suma = suma + index;
-        if(multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
-    }
-    
-    dvEsperado = 11 - (suma % 11);
-    
-    dv = (dv == 'K')?10:dv;
-    dv = (dv == 0)?11:dv;
-    
-    if(dvEsperado != dv) { rut.setCustomValidity("RUT Inválido"); return false; }
-    
-    rut.setCustomValidity('');
+  campo = campo.replace('-','')
+  campo = campo.replace(/\./g,'')
+
+  var suma = 0;
+  var caracteres = "1234567890kK";
+  var contador = 0;    
+  for (var i=0; i < campo.length; i++){
+      u = campo.substring(i, i + 1);
+      if (caracteres.indexOf(u) != -1)
+      contador ++;
+  }
+  if ( contador==0 ) { return false }
+  
+  var rut = campo.substring(0,campo.length-1)
+  var drut = campo.substring( campo.length-1 )
+  var dvr = '0';
+  var mul = 2;
+  
+  for (i= rut.length -1 ; i >= 0; i--) {
+      suma = suma + rut.charAt(i) * mul
+              if (mul == 7)     mul = 2
+              else    mul++
+  }
+  res = suma % 11
+  if (res==1)        dvr = 'k'
+              else if (res==0) dvr = '0'
+  else {
+      dvi = 11-res
+      dvr = dvi + ""
+  }
+  if ( dvr != drut.toLowerCase() ) { return false; }
+  else { return true; }
 }
+
+$.validator.addMethod("rut", function(value, element) { 
+  return this.optional(element) || checkRut(value); 
+}, "Revise el RUT");
 
 $(document).ready(function() {
     $("#formulario").validate({
@@ -43,8 +57,7 @@ $(document).ready(function() {
         },
         documento: {
             required: true,
-            minlength: 9,
-            maxlength: 10
+            rut : true
         },
         comentario: {
             required: true,
