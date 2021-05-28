@@ -17,7 +17,11 @@
           };
           body{
           background: rgb(238, 238, 238);
-        }
+          }
+          .texto-cont{
+            float: right;
+            color: rgb(104, 104, 104);
+          }
     </style>
 </head>
 <body>
@@ -90,7 +94,10 @@
         <br>
         <div>
           <label class="obli">*</label><label for="exampleFormControlTextarea1">Agregar su comentario</label>
-          <textarea class="form-control" name="comentario" id="comentario" placeholder="Escriba su comentario Aqui" rows="6" required></textarea>
+          <textarea class="form-control" onkeyup="countChars(this);" name="comentario" id="comentario" placeholder="Escriba su comentario Aqui" rows="6" required></textarea>
+          <div class="texto-cont">
+            <p id="charNum">0 Caracteres</p>
+          </div>
         </div>
         <input type="hidden" id="url" name="url" value="google.cl" /><br />
         <br>
